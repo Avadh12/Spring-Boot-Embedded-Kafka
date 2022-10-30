@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaMessageProducerService {
 
-    private static final String TOPIC_NAME = "quickstart-events";
+    //private static final String TOPIC_NAME = ;
 
     private final KafkaTemplate<String, UpdatedBrandEvent> kafkaTemplate;
 
@@ -18,6 +18,6 @@ public class KafkaMessageProducerService {
     }
 
     public void send(UpdatedBrandEvent updatedBrandEvent) {
-        kafkaTemplate.send(TOPIC_NAME, updatedBrandEvent);
+        kafkaTemplate.send("quickstart-events", updatedBrandEvent);
     }
 }
